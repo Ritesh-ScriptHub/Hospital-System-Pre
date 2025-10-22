@@ -13,7 +13,7 @@ public class loginasStaff extends JFrame implements ActionListener {
     public loginasStaff(){
         setTitle("Login as staff");
 
-        java.net.URL logoUrl = ClassLoader.getSystemResource("../assets/icons/logo.png");
+        java.net.URL logoUrl = ClassLoader.getSystemResource("assets/icons/logo.png");
         JLabel label;
         if (logoUrl != null) {
             ImageIcon i1 = new ImageIcon(logoUrl);
