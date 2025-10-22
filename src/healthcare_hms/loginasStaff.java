@@ -1,4 +1,4 @@
-package hospital.management.system;
+package healthcare_hms;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +13,7 @@ public class loginasStaff extends JFrame implements ActionListener {
     public loginasStaff(){
         setTitle("Login as staff");
 
-        java.net.URL logoUrl = ClassLoader.getSystemResource("assets/icons/logo.png");
+        java.net.URL logoUrl = ClassLoader.getSystemResource("../assets/icons/logo.png");
         JLabel label;
         if (logoUrl != null) {
             ImageIcon i1 = new ImageIcon(logoUrl);
@@ -89,7 +89,7 @@ public class loginasStaff extends JFrame implements ActionListener {
                 String Pass = new String(pintextfield.getPassword());
 
                 String q = "select * from StafflogIN where StaffUserID = '"+user+"' and  StaffPass = '"+Pass+"'";
-                ResultSet resultSet = c.statement.executeQuery(q);
+                ResultSet resultSet = c.getStatement().executeQuery(q);
 
                 if (resultSet.next()){
                     new Reception();

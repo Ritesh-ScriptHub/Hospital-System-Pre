@@ -1,4 +1,5 @@
-package hospital.management.system;
+package healthcare_hms;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;

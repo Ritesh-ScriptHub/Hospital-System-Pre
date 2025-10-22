@@ -1,5 +1,4 @@
-// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
-package hospital.management.system;
+package healthcare_hms;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,6 +18,12 @@ public class conn {
          System.out.println("Database Connection not established");
          var2.printStackTrace();
       }
+   }
+   public Statement getStatement() {
+      return statement;
+   }
 
+   public Connection getConnection() {
+      return connection;
    }
 }

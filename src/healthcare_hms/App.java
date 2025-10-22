@@ -1,4 +1,4 @@
-package hospital.management.system;
+package healthcare_hms;
 
 public class App {
     public static void main(String[] args) {

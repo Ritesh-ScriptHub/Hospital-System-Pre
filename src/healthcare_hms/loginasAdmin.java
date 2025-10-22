@@ -1,4 +1,4 @@
-package hospital.management.system;
+package healthcare_hms;
 
 import javax.swing.*;
 import java.awt.*;
@@ -90,7 +90,7 @@ public class loginasAdmin extends JFrame implements ActionListener {
                 String Pass = new String(pintextfield.getPassword());
 
                 String q = "select * from AdminlogIN where AdminUserID = '"+user+"' and  AdminPass = '"+Pass+"'";
-                ResultSet resultSet = c.statement.executeQuery(q);
+                ResultSet resultSet = c.getStatement().executeQuery(q);
 
                 if (resultSet.next()){
                     new Reception();
