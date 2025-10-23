@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class NEW_PATIENT extends JDialog implements ActionListener {
     JComboBox<String> comboBox;
-    JTextField textFieldContact, textName, textFieldDisease, textFieldDeposite;
+    JTextField textFieldContact,textFieldIDNumber , textName, textFieldDisease, textFieldDeposite;
     JRadioButton r1, r2, r3;
     Choice c1;
     JLabel date;
@@ -70,7 +70,7 @@ public class NEW_PATIENT extends JDialog implements ActionListener {
 
         String namePlaceholder = "Enter Full Name"; 
         textName = new JTextField();
-        textName.setBounds(222,111,250,20);
+        textName.setBounds(222,111,250,25);
         textName.setText(namePlaceholder);
         textName.setForeground(Color.GRAY);
         panel.add(textName);
@@ -115,10 +115,6 @@ public class NEW_PATIENT extends JDialog implements ActionListener {
         
         spinnerDOB.setBounds(222, 151, 150, 25);
         panel.add(spinnerDOB);
-        
-        // GENDER
-
-        // address
 
         // Gender
         JLabel labelGender = new JLabel("Gender :");
@@ -152,6 +148,17 @@ public class NEW_PATIENT extends JDialog implements ActionListener {
         genderGroup.add(r1);
         genderGroup.add(r2);
         genderGroup.add(r3);
+
+        // id number
+        JLabel labelIDNumber = new JLabel("Number :");
+        labelIDNumber.setBounds(50,229,200,14);
+        labelIDNumber.setFont(new Font("Tahoma",Font.BOLD,14));
+        labelIDNumber.setForeground(Color.white);
+        panel.add(labelIDNumber);
+
+        textFieldIDNumber = new JTextField();
+        textFieldIDNumber.setBounds(222,229,150,25);
+        panel.add(textFieldIDNumber);
 
         // Contact Number
         JLabel labelContact = new JLabel("Contact Number :");
