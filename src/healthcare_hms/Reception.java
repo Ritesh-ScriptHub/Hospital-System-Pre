@@ -44,10 +44,8 @@ public class Reception extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (newPatientFrame != null && newPatientFrame.isVisible()) {
                     newPatientFrame.dispose();
-                    newPatientFrame = new NEW_PATIENT();
-                } else {
-                    newPatientFrame = new NEW_PATIENT();
                 }
+                newPatientFrame = new NEW_PATIENT(Reception.this);
             }
         });
 
@@ -155,7 +153,7 @@ public class Reception extends JFrame {
         btn10.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
+                dispose();
                 new login();
             }
         });
@@ -175,6 +173,8 @@ public class Reception extends JFrame {
         }
         label.setBounds(450,60,408,300);
         panel2.add(label);
+
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         setSize(1300,700);
         getContentPane().setBackground(Color.WHITE);

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
-public class NEW_PATIENT extends JFrame implements ActionListener {
+public class NEW_PATIENT extends JDialog implements ActionListener {
     JComboBox<String> comboBox;
     JTextField textFieldContact, textName, textFieldDisease, textFieldDeposite;
     JRadioButton r1, r2, r3;
@@ -20,7 +20,9 @@ public class NEW_PATIENT extends JFrame implements ActionListener {
     JLabel date;
     JButton b1 ,b2, closeButton;
 
-    NEW_PATIENT(){
+    NEW_PATIENT(JFrame owner){
+
+        super(owner, "New Patient Form", false);
 
         JPanel panel = new JPanel();
         panel.setBounds(20,10,1320,500);
@@ -66,9 +68,29 @@ public class NEW_PATIENT extends JFrame implements ActionListener {
         labelName1.setForeground(Color.white);
         panel.add(labelName1);
 
+        String namePlaceholder = "Enter Full Name"; 
         textName = new JTextField();
         textName.setBounds(222,111,250,20);
+        textName.setText(namePlaceholder);
+        textName.setForeground(Color.GRAY);
         panel.add(textName);
+
+        textName.addFocusListener(new java.awt.event.FocusAdapter() {
+            @Override
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                if (textName.getText().equals(namePlaceholder)) {
+                    textName.setText("");
+                    textName.setForeground(Color.BLACK);
+                }
+            }
+            @Override
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                if (textName.getText().isEmpty()) {
+                    textName.setForeground(Color.GRAY);
+                    textName.setText(namePlaceholder);
+                }
+            }
+        });
 
         // Date of Birth
         JLabel labelDOB = new JLabel("Date of Birth:");
